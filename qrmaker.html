@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembuat QR Code</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">QR Maker</div>
+  </header>
+
+  <main>
+    <div class="konten">
+      <h2>📷 Pembuat QR Code</h2>
+
+      <label for="qrType">Jenis QR</label>
+      <select id="qrType">
+        <option value="link">QR Link</option>
+        <option value="text">QR Text</option>
+      </select>
+
+      <label for="qrInput">Isi Teks / Link</label>
+      <input type="text" id="qrInput" placeholder="Masukkan teks atau link...">
+
+      <label for="logoInput">Logo di tengah (opsional)</label>
+      <input type="file" id="logoInput" accept="image/*">
+      <div id="logoPreviewContainer" style="display:none; margin-top:10px;">
+        <p style="font-size:14px;color:#666;">Preview Logo:</p>
+        <img id="logoPreview" style="max-width:100px; border-radius:8px; border:1px solid #ccc;">
+      </div>
+
+      <button onclick="generateQR()">🚀 Buat QR</button>
+
+      <div id="qrcode" style="margin-top: 20px;"></div>
+      <a id="downloadBtn" style="display:none;" download="qrcode.png">💾 Download QR</a>
+    </div>
+  </main>
+
+  <footer>
+    Dibuat dengan ❤️ - QR Maker
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
